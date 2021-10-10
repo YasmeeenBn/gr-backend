@@ -22,7 +22,7 @@ exports.getCitiesOutre = async (req, res, next) => {
   try {
     const cities = await City.find({
       nomCommune: { $regex: new RegExp(keyword, "i") },
-      type: "outre",
+      // type: "outre",
     })
       .limit(10)
       .sort({ nomCommune: 1 });
